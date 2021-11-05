@@ -1,8 +1,11 @@
 # LeagueOfLegends-pwa
 
 League Of Legends PWA est un site, permettant au utilisateur de se deplacer dans l'univers de League Of Legends.
-On lui donnera acces à certaine fonctionnalité. 
- l'apercu de tous les Champios existant sur le jeu.
+En parcourant le site vous trouverez tous les Champions, avec une page détail. Par la suite vous trouverez tous les Items.
+Ces fonctionnalité seront adapté au version du Jeu. Ainsi vous pourrez modifier la version et les informations.
+
+Enfin en vous connectant vous pourrez créer vos propre Build d'Item.
+
 
 
 
@@ -23,4 +26,4 @@ Objectif
     - [ ]	Pouvoir changer de thème
 
 * Bonus : 
-    -	Affichage du personnage en 3D dans la page détail
+    - [ ]	Affichage du personnage en 3D dans la page détail
