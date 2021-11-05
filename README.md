@@ -9,7 +9,8 @@ On lui donnera acces à certaine fonctionnalité.
 
 # Cahier des charges
 
-    Objectif
+
+Objectif
 
 * Un site fonctionnel sur League Of Legends :
     - [ ]  Connexion / Creation de compte
