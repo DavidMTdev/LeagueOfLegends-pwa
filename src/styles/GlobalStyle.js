@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
      font-style: normal;
   }
 
+  *{
+    text-decoration: none;
+  }
+
   body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -37,11 +41,6 @@ const GlobalStyle = createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
   background-color: '#FFFFFF';
   overscroll-behavior: none;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
   }
 `
 
