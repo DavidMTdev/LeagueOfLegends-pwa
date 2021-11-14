@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { ContainerNavLink, StyledLink } from '../../styles/styledComponents'
 
 const NavLink = () => {
   const auth = false
@@ -18,28 +17,5 @@ const NavLink = () => {
   )
 }
 
-const ContainerNavLink = styled.nav`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin: 0 20px;
-`
-
-const StyledLink = styled(Link)`
-  font-family: 'FrizQuadrata';
-  font-weight: bold;
-  padding: 0 10px;
-  color: ${props => props.theme.secondary};
-  background-color: ${props => props.theme.primary};
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background-color: ${props => props.theme.primaryHover};
-  }
-`
 
 export default NavLink
