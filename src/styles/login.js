@@ -1,16 +1,45 @@
 import styled from 'styled-components'
 
+export const InputStyled = styled.input`
+  height: 5vh;
+  background-color: #1E2328;
+  margin: 5px;
+  border: 2px solid;
+  border-color: #C8AA6E;
+  max-width: 30vw;
+  min-width: 30vw;
+`
+
 export const InputSubmit = styled.input`
-  background: linear-gradient(to bottom, #08abac 0, #01698b 100%);
+  background-color: #1E2328;
+  border: 2px solid rgba(192,252,253,.7);
+  margin: 20px;
+  max-width: 30vw;
+  min-height: 5vh;
+  color: white;
 `
 
 export const ContainerDivLogin = styled.div`
-  display: flex;
+  padding-top: 5vh;
+  display: grid;
+  grid-template-rows: 30vh 50vh;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
-  margin: 20px;
+  width: 100vw;
 `
 
-export const FormLogin = styled.form``
+export const ImgLeague = styled.img`
+  max-width: 45vw;
+`
+
+export const FormLogin = styled.form`
+  display: grid;
+  justify-content: center;
+`
+
+export const ImageBackground = styled.div`
+  background-image: url('https://am-a.akamaihd.net/image?resize=1519:&quality=preserve&f=https://lolstatic-a.akamaihd.net/frontpage/apps/prod/playnow-global/fr_FR/f9caf54ff66c997b27b3d15cc7cf23212c91fb43/assets/img/vi_bluebuff.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 95vh;
+`
