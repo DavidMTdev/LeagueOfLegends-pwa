@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerNavLink, StyledLink } from '../../styles/styledComponents'
+import { ContainerNavLink, StyledLink } from '../../styles/header'
 
 const NavLink = () => {
   const auth = false
@@ -16,6 +16,5 @@ const NavLink = () => {
     </ContainerNavLink>
   )
 }
-
 
 export default NavLink

@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: '#FFFFFF';
+  background-color: ${props => props.theme.body};
   overscroll-behavior: none;
   }
 `

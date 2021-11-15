@@ -1,14 +1,27 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const ContainerNavLink = styled.nav`
+export const ContainerNavTheme = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
   margin: 0 20px;
 `
 
-const StyledLink = styled(Link)`
+export const ThemeIcon = styled.svg`
+  width: 32px;
+  height: 32px;
+  fill: ${props => props.theme.secondary};
+`
+
+export const ContainerNavLink = styled.nav`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 20px;
+`
+
+export const StyledLink = styled(Link)`
   font-family: 'FrizQuadrata';
   font-weight: bold;
   padding: 0 10px;
@@ -25,11 +38,11 @@ const StyledLink = styled(Link)`
   }
 `
 
-const HollowHeader = styled.div`
+export const HollowHeader = styled.div`
   margin-top: 5vh;
 `
 
-const ContainerHeader = styled.header`
+export const ContainerHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,40 +54,26 @@ const ContainerHeader = styled.header`
   background-color: ${props => props.theme.primary};
 `
 
-const HeaderLogo = styled.div`
+export const HeaderLogo = styled.div`
   display: flex;
   align-items: center;
   margin-left: 20px;
 `
 
-const LogoTitle = styled.div`
+export const HeaderNav = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`
+
+export const LogoTitle = styled.div`
   color: ${props => props.theme.secondary};
   font-family: 'FrizQuadrata';
   font-weight: bold;
   margin-left: 10px;
 `
 
-const LogoIcon = styled.img`
+export const LogoIcon = styled.img`
   width: 32px;
   height: 32px;
 `
-
-const InputSubmit = styled.input`
-  background: linear-gradient(to bottom,#08abac 0,#01698b 100%)
-`
-
-const ContainerDivLogin = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  margin: 20px;
-`
-
-const FormLogin = styled.form`
-
-`
-
-
-export {ContainerNavLink, StyledLink, HollowHeader, ContainerHeader, HeaderLogo, LogoTitle, LogoIcon, InputSubmit, ContainerDivLogin, FormLogin}

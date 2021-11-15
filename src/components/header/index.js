@@ -1,13 +1,15 @@
-import styled from 'styled-components'
-
 import NavLink from './NavLink'
 
 import IconLogo from '../../assets/icons/league-of-lengeds-icon-default.png'
-// eslint-disable-next-line
-import IconSunny from '../../assets/icons/fluent-sunny-filled-icon.svg'
-// eslint-disable-next-line
-import IconMoon from '../../assets/icons/fluent-moon-filled-icon.svg'
-import { ContainerHeader, HeaderLogo, HollowHeader, LogoIcon, LogoTitle } from '../../styles/styledComponents'
+import NavTheme from './NavTheme'
+import {
+  ContainerHeader,
+  HeaderLogo,
+  HollowHeader,
+  HeaderNav,
+  LogoIcon,
+  LogoTitle
+} from '../../styles/header'
 
 const Header = () => {
   return (
@@ -20,7 +22,10 @@ const Header = () => {
           <LogoTitle>My Legends</LogoTitle>
         </HeaderLogo>
 
-        <NavLink />
+        <HeaderNav>
+          <NavLink />
+          <NavTheme />
+        </HeaderNav>
       </ContainerHeader>
     </>
   )

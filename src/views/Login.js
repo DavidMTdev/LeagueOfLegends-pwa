@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {
-  ContainerDivLogin,
-  ContainerNavLink,
-  FormLogin,
-  InputSubmit
-} from '../styles/styledComponents'
+import { ContainerDivLogin, FormLogin, InputSubmit } from '../styles/login'
 
 const Login = () => {
   const [username, setUsername] = useState('')
