@@ -1,16 +1,29 @@
-import { SWITCH_THEME } from '../actions/theme'
-import { DarkTheme } from '../themes'
+import { API_STARTED, API_SUCCESS, API_FAILURE } from '../actions/login'
 
 const initialState = {
-  value: DarkTheme
+  loading: false,
+  error: null,
+  data: localStorage.getItem('token')
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SWITCH_THEME:
+    case API_STARTED:
       return {
         ...state,
-        value: action.payload
+        loading: true
+      }
+    case API_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        data: action.payload
+      }
+    case API_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
       }
     default:
       return state

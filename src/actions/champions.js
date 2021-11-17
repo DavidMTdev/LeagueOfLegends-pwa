@@ -14,7 +14,7 @@ export const fetchChampions = (version, language) => dispatch => {
     .then(res => {
       let array = []
 
-      Object.keys(res.data.data).map((key, index) => {
+      Object.keys(res.data.data).map(key => {
         const data = {
           version: res.data.data[key].version,
           id: res.data.data[key].id,
