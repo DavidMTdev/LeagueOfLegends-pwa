@@ -1,13 +1,12 @@
-import { SWITCH_THEME } from '../actions/theme'
-import { DarkTheme } from '../themes'
+import { LOGIN_STATE } from '../actions/login'
 
 const initialState = {
-  value: DarkTheme
+  value: false
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SWITCH_THEME:
+    case LOGIN_STATE:
       return {
         ...state,
         value: action.payload
