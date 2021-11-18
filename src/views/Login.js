@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import LoginForm from '../components/login/LoginForm'
 import Loading from '../components/loading/Loading'
@@ -6,9 +8,16 @@ import Loading from '../components/loading/Loading'
 import { ContainerDivLogin, ImageBackground, ImgLeague } from '../styles/login'
 
 const Login = () => {
+  const history = useHistory()
   const loading = useSelector(state => state.login.loading)
   const error = useSelector(state => state.champions.error)
-  // const token = useSelector(state => state.champions.data)
+  const token = useSelector(state => state.champions.data)
+
+  useEffect(() => {
+    if (token) {
+      history.push('/builds')
+    }
+  }, [])
 
   return (
     <ImageBackground>

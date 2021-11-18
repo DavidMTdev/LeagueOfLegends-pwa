@@ -2,7 +2,8 @@ import axios from 'axios'
 import {
   API_STARTED_CHAMPION,
   API_SUCCESS_CHAMPION,
-  API_FAILURE_CHAMPION
+  API_FAILURE_CHAMPION,
+  API_SUCCESS_CHAMPIONS
 } from '../config/type'
 
 export const fetchChampions = (version, language) => dispatch => {
@@ -35,7 +36,23 @@ export const fetchChampions = (version, language) => dispatch => {
         }
         array = [...array, data]
       })
-      dispatch(success(array))
+      dispatch(success(API_SUCCESS_CHAMPIONS, array))
+    })
+    .catch(err => {
+      dispatch(failure(err.message))
+    })
+}
+
+export const fetchChampion = (version, language, name) => dispatch => {
+  dispatch(started())
+
+  axios({
+    method: 'GET',
+    url: `http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/${name}.json`
+  })
+    .then(res => {
+      const data = res.data.data[name]
+      dispatch(success(API_SUCCESS_CHAMPION, data))
     })
     .catch(err => {
       dispatch(failure(err.message))
@@ -46,9 +63,9 @@ const started = () => ({
   type: API_STARTED_CHAMPION
 })
 
-const success = data => ({
-  type: API_SUCCESS_CHAMPION,
-  payload: [...data]
+const success = (type, data) => ({
+  type: type,
+  payload: data
 })
 
 const failure = error => ({

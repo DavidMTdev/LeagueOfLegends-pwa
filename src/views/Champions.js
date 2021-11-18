@@ -7,7 +7,8 @@ const Champions = () => {
   const dispatch = useDispatch()
   const loading = useSelector(state => state.champions.loading)
   const error = useSelector(state => state.champions.error)
-  const champions = useSelector(state => state.champions.data)
+  const champions = useSelector(state => state.champions.champions)
+
   useEffect(() => {
     dispatch(actions.champions.fetchChampions('11.22.1', 'fr_FR'))
   }, [])
