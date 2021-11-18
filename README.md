@@ -16,14 +16,14 @@ Enfin en vous connectant vous pourrez créer vos propre Build d'Item.
 Objectif
 
 * Un site fonctionnel sur League Of Legends :
-    - [ x ]  Connexion
-    - [ x ]	Affichage de tous les champions
+    - [ * ]  Connexion
+    - [ * ]	Affichage de tous les champions
     - [ ]	Affichage de tous les Items
     - [ ]	Création de Build personnalisé d’Item (Uniquement quand l'User est connecté)
-    - [ x ]	Affichage des détails d’un champion
+    - [ * ]	Affichage des détails d’un champion
     - [ ]	Sélection des versions du Jeu et des informations
     - [ ]	Choix de la langue
-    - [ x ]	Pouvoir changer de thème
+    - [ * ]	Pouvoir changer de thème
 
 * Bonus : 
     - [ ]	Affichage du personnage en 3D dans la page détail
