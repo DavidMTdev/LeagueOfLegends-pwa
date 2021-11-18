@@ -1,14 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux'
-import actions from '../../actions'
+import { useSelector } from 'react-redux'
 import { ContainerNavLink, StyledLink } from '../../styles/header'
+import Logout from '../login/Logout'
 
 const NavLink = () => {
-  const dispatch = useDispatch()
   const auth = useSelector(state => state.login.data)
-
-  const Logout = () => {
-    dispatch(actions.login.logout())
-  }
 
   return (
     <ContainerNavLink>
@@ -18,7 +13,7 @@ const NavLink = () => {
       {!auth && <StyledLink to='/'>Login</StyledLink>}
 
       {auth && <StyledLink to='/builds'>Builds</StyledLink>}
-      {auth && <StyledLink onclick={Logout()}>Logout</StyledLink>}
+      {auth && <Logout />}
     </ContainerNavLink>
   )
 }

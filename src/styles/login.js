@@ -43,3 +43,20 @@ export const ImageBackground = styled.div`
   width: 100vw;
   height: 95vh;
 `
+
+export const StyledLogout = styled.div`
+  font-family: 'FrizQuadrata';
+  font-weight: bold;
+  padding: 0 10px;
+  color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.primary};
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: ${props => props.theme.primaryHover};
+  }
+`
