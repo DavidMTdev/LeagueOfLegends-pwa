@@ -1,4 +1,4 @@
-import { API_STARTED, API_SUCCESS, API_FAILURE } from '../actions/champions'
+import { API_STARTED_CHAMPION, API_SUCCESS_CHAMPION, API_FAILURE_CHAMPION } from '../actions/champions'
 
 const initialState = {
   loading: false,
@@ -8,18 +8,18 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case API_STARTED:
+    case API_STARTED_CHAMPION:
       return {
         ...state,
         loading: true
       }
-    case API_SUCCESS:
+    case API_SUCCESS_CHAMPION:
       return {
         ...state,
         loading: false,
         data: action.payload
       }
-    case API_FAILURE:
+    case API_FAILURE_CHAMPION:
       return {
         ...state,
         loading: false,

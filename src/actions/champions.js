@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export const API_SUCCESS = 'API_SUCCESS'
-export const API_FAILURE = 'API_FAILURE'
-export const API_STARTED = 'API_STARTED'
+export const API_SUCCESS_CHAMPION = 'API_SUCCESS_CHAMPION'
+export const API_FAILURE_CHAMPION = 'API_FAILURE_CHAMPION'
+export const API_STARTED_CHAMPION = 'API_STARTED_CHAMPION'
 
 export const fetchChampions = (version, language) => dispatch => {
   dispatch(started())
@@ -42,16 +42,16 @@ export const fetchChampions = (version, language) => dispatch => {
 }
 
 const started = () => ({
-  type: API_STARTED
+  type: API_STARTED_CHAMPION
 })
 
 const success = data => ({
-  type: API_SUCCESS,
+  type: API_SUCCESS_CHAMPION,
   payload: [...data]
 })
 
 const failure = error => ({
-  type: API_FAILURE,
+  type: API_FAILURE_CHAMPION,
   payload: {
     error
   }
