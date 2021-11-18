@@ -2,17 +2,17 @@ import styled from 'styled-components'
 
 export const InputStyled = styled.input`
   height: 5vh;
-  background-color: #1E2328;
+  background-color: #1e2328;
   margin: 5px;
   border: 2px solid;
-  border-color: #C8AA6E;
+  border-color: #c8aa6e;
   max-width: 30vw;
   min-width: 30vw;
 `
 
 export const InputSubmit = styled.input`
-  background-color: #1E2328;
-  border: 2px solid rgba(192,252,253,.7);
+  background-color: #1e2328;
+  border: 2px solid rgba(192, 252, 253, 0.7);
   margin: 20px;
   max-width: 30vw;
   min-height: 5vh;
