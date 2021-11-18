@@ -21,7 +21,7 @@ const Champions = () => {
   }
 
   const showChampions = champions.map((item, index) => (
-    <div key={index} onClick={() => onClickChampion(item.name)}>
+    <div key={index} onClick={() => onClickChampion(item.id)}>
       <img src={item.images.square} />
       <div>{item.name}</div>
     </div>
