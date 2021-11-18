@@ -1,8 +1,9 @@
 import axios from 'axios'
-
-export const API_SUCCESS_CHAMPION = 'API_SUCCESS_CHAMPION'
-export const API_FAILURE_CHAMPION = 'API_FAILURE_CHAMPION'
-export const API_STARTED_CHAMPION = 'API_STARTED_CHAMPION'
+import {
+  API_STARTED_CHAMPION,
+  API_SUCCESS_CHAMPION,
+  API_FAILURE_CHAMPION
+} from '../config/type'
 
 export const fetchChampions = (version, language) => dispatch => {
   dispatch(started())

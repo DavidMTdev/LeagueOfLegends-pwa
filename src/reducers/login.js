@@ -1,4 +1,9 @@
-import { API_STARTED_LOGIN, API_SUCCESS_LOGIN, API_FAILURE_LOGIN, API_LOGOUT } from '../actions/login'
+import {
+  API_STARTED_LOGIN,
+  API_SUCCESS_LOGIN,
+  API_FAILURE_LOGIN,
+  API_LOGOUT
+} from '../config/type'
 
 const initialState = {
   loading: false,

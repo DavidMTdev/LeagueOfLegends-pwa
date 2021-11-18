@@ -1,4 +1,4 @@
-export const SWITCH_THEME = 'SWITCH_THEME'
+import { SWITCH_THEME } from '../config/type'
 
 export const switchTheme = theme => ({
   type: SWITCH_THEME,

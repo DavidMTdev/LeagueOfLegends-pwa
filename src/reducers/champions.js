@@ -1,4 +1,8 @@
-import { API_STARTED_CHAMPION, API_SUCCESS_CHAMPION, API_FAILURE_CHAMPION } from '../actions/champions'
+import {
+  API_STARTED_CHAMPION,
+  API_SUCCESS_CHAMPION,
+  API_FAILURE_CHAMPION
+} from '../config/type'
 
 const initialState = {
   loading: false,

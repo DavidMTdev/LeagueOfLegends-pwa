@@ -1,8 +1,9 @@
 import axios from 'axios'
-export const API_SUCCESS_LOGIN = 'API_SUCCESS_LOGIN'
-export const API_LOGOUT = 'API_LOGOUT'
-export const API_FAILURE_LOGIN = 'API_FAILURE_LOGIN'
-export const API_STARTED_LOGIN = 'API_STARTED_LOGIN'
+import {
+  API_STARTED_LOGIN,
+  API_SUCCESS_LOGIN,
+  API_FAILURE_LOGIN
+} from '../config/type'
 
 export const fetchAuth = (username, password) => dispatch => {
   dispatch(started())
@@ -27,7 +28,7 @@ export const fetchAuth = (username, password) => dispatch => {
 }
 
 export const logout = () => dispatch => {
-  localStorage.setItem('token', "")
+  localStorage.removeItem('token')
   dispatch(success(null))
 }
 
