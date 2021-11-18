@@ -1,0 +1,11 @@
+{
+  "translation": {
+    "header": {
+      "items": "Items",
+      "login": "Login",
+      "logout": "Logout",
+      "champions": "Champions",
+      "builds": "My Builds"
+    }
+  }
+}

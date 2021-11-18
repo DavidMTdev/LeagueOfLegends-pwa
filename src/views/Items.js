@@ -16,7 +16,7 @@ const Items = () => {
   }, [])
 
   const showItems = Object.keys(items).map(key => (
-    <div key={items[key]}>
+    <div key={key}>
       <img
         src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
       />
