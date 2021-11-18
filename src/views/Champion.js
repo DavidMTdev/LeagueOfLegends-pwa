@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import actions from '../actions'
 
 import Loading from '../components/loading/Loading'
-import ChampionDetail from '../components/champion/ChampionDetail'
+import { BackgroundChamp, ChampionDetail } from '../styles/champions'
 
 const Champion = () => {
   const { name } = useParams()
@@ -19,16 +19,16 @@ const Champion = () => {
   }, [])
 
   return (
-    <div>
+    <BackgroundChamp>
       {loading && <Loading size='1' />}
       {error && <div>error</div>}
       {champion && (
         <div>
-          <ChampionDetail item={champion?.name} />
-          <ChampionDetail item={champion?.blurb} />
+          <ChampionDetail>{champion?.name}</ChampionDetail>
+          <ChampionDetail>{champion?.blurb}</ChampionDetail>
         </div>
       )}
-    </div>
+    </BackgroundChamp>
   )
 }
 

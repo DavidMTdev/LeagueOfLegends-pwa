@@ -12,3 +12,9 @@ export const DivChampion = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 20vw);
 `
+
+export const ChampionDetail = styled.p``
+
+export const BackgroundChamp = styled.div`
+  background-image: url('');
+`
