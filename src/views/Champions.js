@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import actions from '../actions'
+import { DivChampion, DivContainerChamp } from '../styles/champions'
 
 const Champions = () => {
   const dispatch = useDispatch()
@@ -14,19 +15,21 @@ const Champions = () => {
   }, [])
 
   const showChampions = champions.map((item, index) => (
-    <div key={index}>
-      <img src={item.images.square} />
-      <div>{item.name}</div>
-    </div>
+     
+      <div key={index}>
+        <img src={item.images.square} />
+        <div>{item.name}</div>
+      </div>
+    
   ))
 
   return (
-    <div>
-      <h1>Champions view</h1>
+    <DivContainerChamp>
+      <div></div>
       {loading && <div>loading</div>}
       {error && <div>error</div>}
-      {champions && showChampions}
-    </div>
+      {champions && <DivChampion> {showChampions} </DivChampion>}
+    </DivContainerChamp>
   )
 }
 
