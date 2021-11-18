@@ -42,6 +42,10 @@ const GlobalStyle = createGlobalStyle`
   background-color: ${props => props.theme.body};
   overscroll-behavior: none;
   }
+
+  p{
+    color: ${props => props.theme.text};
+  }
 `
 
 export default GlobalStyle
