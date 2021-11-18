@@ -11,7 +11,7 @@ export const fetchChampions = (version, language) => dispatch => {
 
   axios({
     method: 'GET',
-    url: `http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.json`
+    url: `https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.json`
   })
     .then(res => {
       let array = []
