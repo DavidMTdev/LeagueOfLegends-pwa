@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import actions from '../actions'
 import Loading from '../components/loading/Loading'
 import { BackgroundChamp, ChampInfo, ChampionDetail, ChampionDetailName, ChoixDetail, Competence, CompetenceImg, SelectView, SkinImg } from '../styles/champions'
-import { Carousel } from 'react-responsive-carousel'
 
 
 const Champion = () => {
