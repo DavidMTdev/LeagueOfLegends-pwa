@@ -13,8 +13,50 @@ export const DivChampion = styled.div`
   grid-template-columns: repeat(4, 20vw);
 `
 
-export const ChampionDetail = styled.p``
+export const ChampionDetail = styled.p`
+  margin: 0;
+  width: 40vw;
+`
+
+export const ChampionDetailName = styled.p`
+  margin: 0;
+  width: 40vw;
+  font-weight: bold;
+  font-size: 2em;
+`
 
 export const BackgroundChamp = styled.div`
-  background-image: url('');
+  background-image: url(${props => props.image});
+  background-size: cover;
+  height: 95vh;
+`
+
+export const ChampInfo = styled.div`
+  margin: 5vh;
+`
+
+export const SelectView = styled.div`
+  display: flex;
+  margin: 2vh;
+  max-width: 60vw;
+`
+
+export const ChoixDetail = styled.p`
+  margin: 0;
+  width: 100%;
+  text-decoration: ${props => props.decoration};
+  justify-content: center;
+  align-items: center;
+`
+
+export const CompetenceImg = styled.img`
+  max-heigth: 50px;
+`
+
+export const Competence = styled.div`
+  width: 60vw;
+`
+
+export const SkinImg = styled.img`
+  max-width: 20vw;
 `
