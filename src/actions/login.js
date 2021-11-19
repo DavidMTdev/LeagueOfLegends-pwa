@@ -1,11 +1,12 @@
 import axios from 'axios'
+
 import {
   API_STARTED_LOGIN,
   API_SUCCESS_LOGIN,
   API_FAILURE_LOGIN
 } from '../config/type'
 
-export const fetchAuth = (username, password) => dispatch => {
+export const fetchAuth = (history, username, password) => dispatch => {
   dispatch(started())
 
   axios({
@@ -21,6 +22,7 @@ export const fetchAuth = (username, password) => dispatch => {
 
       localStorage.setItem('token', token)
       dispatch(success(token))
+      history.push('/builds')
     })
     .catch(err => {
       dispatch(failure(err.message))

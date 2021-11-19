@@ -10,10 +10,11 @@ import { ContainerDivLogin, ImageBackground, ImgLeague } from '../styles/login'
 const Login = () => {
   const history = useHistory()
   const loading = useSelector(state => state.login.loading)
-  const error = useSelector(state => state.champions.error)
-  const token = useSelector(state => state.champions.data)
+  const error = useSelector(state => state.login.error)
+  const token = useSelector(state => state.login.data)
 
   useEffect(() => {
+    console.log(token)
     if (token) {
       history.push('/builds')
     }
