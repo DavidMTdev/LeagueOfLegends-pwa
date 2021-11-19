@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { store } from './config/store'
 import './config/translation'
+import './config/firebase'
 
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
