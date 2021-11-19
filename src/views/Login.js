@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
@@ -13,12 +12,9 @@ const Login = () => {
   const error = useSelector(state => state.login.error)
   const token = useSelector(state => state.login.data)
 
-  useEffect(() => {
-    console.log(token)
-    if (token) {
-      history.push('/builds')
-    }
-  }, [])
+  if (token) {
+    history.push('/builds')
+  }
 
   return (
     <ImageBackground>

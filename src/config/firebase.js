@@ -34,8 +34,3 @@ getToken(messaging, {
   .catch(err => {
     console.log('An error occurred while retrieving token. ', err)
   })
-
-// export const onMessageListener = onMessage(messaging, payload => {
-//   console.log('Message received. ', payload)
-//   // ...
-// })
