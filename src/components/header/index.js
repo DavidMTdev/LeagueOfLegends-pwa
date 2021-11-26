@@ -1,7 +1,8 @@
 import NavLink from './NavLink'
+import NavTheme from './NavTheme'
+import NavTranslate from './NavTranslate'
 
 import IconLogo from '../../assets/icons/league-of-lengeds-icon-default.png'
-import NavTheme from './NavTheme'
 import {
   ContainerHeader,
   HeaderLogo,
@@ -25,6 +26,7 @@ const Header = () => {
         <HeaderNav>
           <NavLink />
           <NavTheme />
+          <NavTranslate />
         </HeaderNav>
       </ContainerHeader>
     </>

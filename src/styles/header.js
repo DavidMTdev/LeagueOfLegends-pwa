@@ -1,24 +1,31 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const ContainerNavTheme = styled.div`
+export const ContainerNav = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  margin: 0 20px;
+  /* margin: 0 10px; */
 `
 
 export const ThemeIcon = styled.svg`
   width: 32px;
   height: 32px;
   fill: ${props => props.theme.secondary};
+  margin-left: 20px;
 `
 
-export const ContainerNavLink = styled.nav`
+export const NavTranslation = styled.div`
+  /* font-family: 'FrizQuadrata'; */
+  font-weight: bold;
+  padding: 0 10px;
+  color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.primary};
+  cursor: pointer;
+  height: 100%;
   display: flex;
   align-items: center;
-  height: 100%;
-  margin: 0 20px;
+  justify-content: center;
 `
 
 export const StyledLink = styled(Link)`
@@ -49,7 +56,7 @@ export const ContainerHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 5vh;
   background-color: ${props => props.theme.primary};
 `
@@ -60,10 +67,11 @@ export const HeaderLogo = styled.div`
   margin-left: 20px;
 `
 
-export const HeaderNav = styled.div`
+export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
   height: 100%;
+  margin: 0 20px;
 `
 
 export const LogoTitle = styled.div`
