@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/builds',
     component: Builds,
-    meta: { requiresAuth: false }
+    meta: { requiresAuth: true }
   }
 ]
 

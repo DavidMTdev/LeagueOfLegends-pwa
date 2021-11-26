@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import actions from '../actions'
 import Loading from '../components/loading/Loading'
-import { BackgroundChamp, ChampInfo, ChampionDetail, ChampionDetailName, ChoixDetail, Competence, CompetenceImg, SelectView, SkinImg } from '../styles/champions'
-
+import { BackgroundChamp, ChampInfo, ChampionDetail, ChampionDetailName, ChoixDetail, Competence, CompetenceImg, SelectView, SkinImg, StyledCarousel } from '../styles/champions'
+import Carousel, { Item } from 'react-grid-carousel'
 
 const Champion = () => {
   const { name } = useParams()
@@ -14,14 +14,19 @@ const Champion = () => {
   const champion = useSelector(state => state.champions.champion)
   const [view, setView] = useState('Vue densemble')
   const [competence, setCompetence] = useState(0)
-  const [background, setBackground] = useState(0)
+  const [num, setNum] = useState(0)
+  const [background, setBackground] = useState(`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_${num}.jpg`)
 
   useEffect(() => {
     dispatch(actions.champions.fetchChampion('11.22.1', 'fr_FR', name))
   }, [])
 
+  useEffect(()=> {
+    setBackground(`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_${num}.jpg`)
+  },[champion, num])
+
   return (
-    <BackgroundChamp image={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion?.id}_${background}.jpg`}>
+    <BackgroundChamp image={background}>
       {loading && <Loading size='1' />}
       {error && <div>error</div>}
       {champion && (
@@ -93,17 +98,17 @@ const Champion = () => {
 
           : null}
 
-          { view == 'Skins' ? 
-              <div>
+          { view == 'Skins' ?
+          <StyledCarousel>
+            <Carousel cols={5} rows={1} gap={'20px'} loop>
               {champion.skins.map((item) => (
-                <>
-                  <ChampionDetail>{item.name == "default" ? champion.name : item.name}</ChampionDetail>
-                  <SkinImg src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_${item.num}.jpg`}></SkinImg>
-                </>
+              <Carousel.Item key={item.num}>
+                  <SkinImg onClick={()=> setNum(item.num)} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_${item.num}.jpg`}/>
+              </Carousel.Item>
               ))}
-              </div>
+            </Carousel>
+          </StyledCarousel>
           : null}
-          
         </div>
       )}
     </BackgroundChamp>

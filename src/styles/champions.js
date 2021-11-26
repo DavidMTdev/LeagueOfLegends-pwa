@@ -26,7 +26,7 @@ export const ChampionDetailName = styled.p`
 `
 
 export const BackgroundChamp = styled.div`
-  background-image: url(${props => props.image});
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.3), #000000), url(${props => props.image});
   background-size: cover;
   height: 95vh;
 `
@@ -58,5 +58,9 @@ export const Competence = styled.div`
 `
 
 export const SkinImg = styled.img`
-  max-width: 20vw;
+  width: 100%;
+`
+export const StyledCarousel = styled.div`
+  position: fixed;
+  bottom: 5vh;
 `
