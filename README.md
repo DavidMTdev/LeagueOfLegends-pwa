@@ -20,11 +20,8 @@ Objectif
     - [x]	Affichage de tous les champions
     - [x]	Affichage des infos d'un champion
     - [x]	Affichage de tous les Items
-    - [ ]	Création de Build personnalisé d’Item (Uniquement quand l'User est connecté)
+    - [x]	Création de Build personnalisé d’Item (Uniquement quand l'User est connecté)
     - [x]	Affichage des détails d’un champion
     - [ ]	Sélection des versions du Jeu et des informations
-    - [ ]	Choix de la langue
+    - [x]	Choix de la langue
     - [x]	Pouvoir changer de thème
-
-* Bonus : 
-    - [ ]	Affichage du personnage en 3D dans la page détail

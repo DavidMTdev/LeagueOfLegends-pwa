@@ -23,7 +23,6 @@ const Items = () => {
   const loading = useSelector(state => state.items.loading)
   const error = useSelector(state => state.items.error)
   const items = useSelector(state => state.items.items)
-  const token = useSelector(state => state.login.data)
   const builds = useSelector(state => state.build.builds)
   const selectedBuild = useSelector(state => state.build.selectedBuild)
   const tokenBuilds = useSelector(state => state.build.tokenBuilds)
