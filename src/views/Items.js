@@ -7,6 +7,16 @@ import actions from '../actions'
 import Loading from '../components/loading/Loading'
 import Dropdown from '../components/Dropdown'
 
+import { Container } from '../styles/global'
+import {
+  ItemSContainer,
+  ItemSelectedContainer,
+  ItemContainer,
+  ItemImage,
+  Button,
+  SelectedBuild
+} from '../styles/items'
+
 const Items = () => {
   const dispatch = useDispatch()
   const { i18n } = useTranslation()
@@ -27,51 +37,61 @@ const Items = () => {
     setCurrentItem(item)
   }
 
-  const showItems = Object.keys(items).map(key => (
-    <div key={key}>
-      <img
-        onClick={() => onClickSelectItem(key)}
-        src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
-      />
-    </div>
-  ))
-
   const onClickAddItem = item => {
     dispatch(actions.build.addItem(item, selectedBuild, builds, tokenBuilds))
   }
 
   return (
-    <div>
+    <Container>
       {loading && <Loading size='1' />}
       {error && <p>error</p>}
+      <ItemSContainer>
+        <ItemContainer width='70%'>
+          {items && (
+            <>
+              {Object.keys(items).map(key => (
+                <ItemImage
+                  key={key}
+                  onClick={() => onClickSelectItem(key)}
+                  src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
+                />
+              ))}
+            </>
+          )}
+        </ItemContainer>
+        <ItemSelectedContainer>
+          {currentItem && (
+            <>
+              <div>
+                <p>{items[currentItem]?.name}</p>
+                <p>{items[currentItem]?.plaintext}</p>
+              </div>
 
-      {currentItem && (
-        <div>
-          <div>
-            <Dropdown list={builds} header='Add Item' />
-            {selectedBuild != null && (
-              <button onClick={() => onClickAddItem(items[currentItem])}>
-                add
-              </button>
-            )}
-          </div>
+              <SelectedBuild>
+                <Dropdown list={builds} headerOption='Select Item' />
+                {selectedBuild != null && (
+                  <Button onClick={() => onClickAddItem(items[currentItem])}>
+                    Add Item
+                  </Button>
+                )}
+              </SelectedBuild>
 
-          <p>{items[currentItem]?.name}</p>
-          <p>{items[currentItem]?.plaintext}</p>
-
-          {items[currentItem]?.into?.map((key, index) => (
-            <div key={index}>
-              <p>{items[key].name}</p>
-              <img
-                onClick={() => onClickSelectItem(items[key])}
-                src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
-              />
-            </div>
-          ))}
-        </div>
-      )}
-      {items && <div>{showItems}</div>}
-    </div>
+              <ItemContainer>
+                {items[currentItem]?.into?.map((key, index) => (
+                  <div key={index}>
+                    <p>{items[key].name}</p>
+                    <ItemImage
+                      onClick={() => onClickSelectItem(items[key])}
+                      src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
+                    />
+                  </div>
+                ))}
+              </ItemContainer>
+            </>
+          )}
+        </ItemSelectedContainer>
+      </ItemSContainer>
+    </Container>
   )
 }
 

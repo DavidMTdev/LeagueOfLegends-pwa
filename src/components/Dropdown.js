@@ -27,7 +27,7 @@ const Dropdown = props => {
   return (
     <DropDownContainer>
       <DropDownHeader onClick={toggling}>
-        {selectedOption?.name || 'Add Item'}
+        {selectedOption?.name || props.headerOption}
       </DropDownHeader>
       {isOpen && (
         <DropDownListContainer>
