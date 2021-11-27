@@ -14,3 +14,8 @@ export const API_FAILURE_ITEM = 'API_FAILURE_ITEM'
 export const API_STARTED_ITEM = 'API_STARTED_ITEM'
 
 export const SWITCH_THEME = 'SWITCH_THEME'
+
+export const ADD_ITEM = 'ADD_ITEM'
+export const REMOVE_ITEM = 'REMOVE_ITEM'
+export const NEW_BUILD = 'NEW_BUILD'
+export const SELECTED_BUILD = 'SELECTED_BUILD'

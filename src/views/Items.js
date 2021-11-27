@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import actions from '../actions'
 
 import Loading from '../components/loading/Loading'
+import Dropdown from '../components/Dropdown'
 
 const Items = () => {
   const dispatch = useDispatch()
@@ -13,6 +14,9 @@ const Items = () => {
   const error = useSelector(state => state.items.error)
   const items = useSelector(state => state.items.items)
   const token = useSelector(state => state.login.data)
+  const builds = useSelector(state => state.build.builds)
+  const selectedBuild = useSelector(state => state.build.selectedBuild)
+  const tokenBuilds = useSelector(state => state.build.tokenBuilds)
   const [currentItem, setCurrentItem] = useState(null)
 
   useEffect(() => {
@@ -32,6 +36,10 @@ const Items = () => {
     </div>
   ))
 
+  const onClickAddItem = item => {
+    dispatch(actions.build.addItem(item, selectedBuild, builds, tokenBuilds))
+  }
+
   return (
     <div>
       {loading && <Loading size='1' />}
@@ -39,9 +47,18 @@ const Items = () => {
 
       {currentItem && (
         <div>
-          {token && <div>add</div>}
+          <div>
+            <Dropdown list={builds} header='Add Item' />
+            {selectedBuild != null && (
+              <button onClick={() => onClickAddItem(items[currentItem])}>
+                add
+              </button>
+            )}
+          </div>
+
           <p>{items[currentItem]?.name}</p>
           <p>{items[currentItem]?.plaintext}</p>
+
           {items[currentItem]?.into?.map((key, index) => (
             <div key={index}>
               <p>{items[key].name}</p>

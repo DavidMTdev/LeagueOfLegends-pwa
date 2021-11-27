@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const DivContainerChamp = styled.div`
   display: grid;
@@ -26,7 +26,8 @@ export const ChampionDetailName = styled.p`
 `
 
 export const BackgroundChamp = styled.div`
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0.3), #000000), url(${props => props.image});
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.3), #000000),
+    url(${props => props.image});
   background-size: cover;
   height: 95vh;
 `

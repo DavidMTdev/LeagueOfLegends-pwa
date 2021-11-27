@@ -21,6 +21,7 @@ export const fetchAuth = (history, username, password) => dispatch => {
       const token = res.headers['x-access-token']
 
       localStorage.setItem('token', token)
+      localStorage.setItem(`${token}_builds`, JSON.stringify([]))
       dispatch(success(token))
       history.push('/builds')
     })
