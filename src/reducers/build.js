@@ -9,7 +9,7 @@ const tokenBuilds = `${localStorage.getItem('token')}_builds`
 
 const initialState = {
   tokenBuilds: tokenBuilds,
-  builds: JSON.parse(localStorage.getItem(tokenBuilds)),
+  builds: JSON.parse(localStorage.getItem(tokenBuilds) || '[]'),
   selectedBuild: null
 }
 
