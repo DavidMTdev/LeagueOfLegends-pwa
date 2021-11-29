@@ -45,7 +45,7 @@ const Items = () => {
       {loading && <Loading size='1' />}
       {error && <p>error</p>}
       <ItemSContainer>
-        <ItemContainer width='70%'>
+        <ItemContainer width='50vw'>
           {items && (
             <>
               {Object.keys(items).map(key => (
@@ -80,7 +80,7 @@ const Items = () => {
 
               <ItemContainer>
                 {
-                  items[currentItem]?.into !== null ? <p>Into :</p> : null
+                  items[currentItem]?.into != null ? <p>Into :</p> : null
                 }
                 {items[currentItem]?.into?.map((key, index) => (
                   <div key={index}>
@@ -95,7 +95,7 @@ const Items = () => {
 
               <ItemContainer>
                 {
-                  items[currentItem]?.from !== null ? <p>From :</p> : null
+                  items[currentItem]?.from != null ? <p>From :</p> : null
                 }
                 {items[currentItem]?.from?.map((key, index) => (
                   <div key={index}>

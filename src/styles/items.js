@@ -16,7 +16,8 @@ export const ItemSelectedContainer = styled.div`
 export const ItemContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 50vw;
+  height: 100%;
+  width: ${props => props.width || '50vw'};
   align-content: center;
   justify-content: center;
 `
