@@ -16,7 +16,7 @@ const Champion = () => {
   const error = useSelector(state => state.champions.error)
   const champion = useSelector(state => state.champions.champion)
   const [view, setView] = useState('Vue densemble')
-  const [competence, setCompetence] = useState(0)
+  const [competence, setCompetence] = useState(4)
   const [num, setNum] = useState(0)
   const [background, setBackground] = useState(`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_${num}.jpg`)
 
@@ -69,55 +69,35 @@ const Champion = () => {
             <div>
               <SelectView>
                 <Competence
-                  onClick={() => setCompetence(0)}
-                  decoration={competence == 0 ? 'underline' : 'null'}
-                >
-                  <CompetenceImg
-                    src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/passive/${champion.passive.image.full}`}
-                  />
-                  <ChoixDetail>P</ChoixDetail>
-                </Competence>
-
-                <Competence
-                  onClick={() => setCompetence(1)}
-                  decoration={competence == 1 ? 'underline' : 'null'}
-                >
-                  <CompetenceImg
-                    src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${champion.spells[0].image.full}`}
-                  />
-                  <ChoixDetail>A</ChoixDetail>
-                </Competence>
-
-                <Competence
-                  onClick={() => setCompetence(2)}
-                  decoration={competence == 2 ? 'underline' : 'null'}
-                >
-                  <CompetenceImg
-                    src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${champion.spells[1].image.full}`}
-                  />
-                  <ChoixDetail>Z</ChoixDetail>
-                </Competence>
-
-                <Competence
-                  onClick={() => setCompetence(3)}
-                  decoration={competence == 3 ? 'underline' : 'null'}
-                >
-                  <CompetenceImg
-                    src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${champion.spells[2].image.full}`}
-                  />
-                  <ChoixDetail>E</ChoixDetail>
-                </Competence>
-
-                <Competence
                   onClick={() => setCompetence(4)}
                   decoration={competence == 4 ? 'underline' : 'null'}
                 >
+                  <ChoixDetail>{champion.passive.name}</ChoixDetail>
                   <CompetenceImg
-                    src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${champion.spells[3].image.full}`}
+                    src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/passive/${champion.passive.image.full}`}
                   />
-                  <ChoixDetail>R</ChoixDetail>
                 </Competence>
+
+                {
+                  champion.spells.map((item, index) => (
+                    <Competence
+                      onClick={() => setCompetence(index)}
+                      decoration={competence == index ? 'underline' : 'null'}
+                    >
+                      <ChoixDetail>{item.name}</ChoixDetail>
+                      <CompetenceImg
+                        src={`https://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${item.image.full}`}
+                      />
+                    </Competence>
+                  ))
+                }
               </SelectView>
+              {
+                  competence == 4 ? 
+                  <ChoixDetail>{champion.passive.description}</ChoixDetail>
+                  :
+                  <ChoixDetail>{champion.spells[competence].description}</ChoixDetail>
+                }
             </div>
           )
           : null}

@@ -30,6 +30,11 @@ export const BackgroundChamp = styled.div`
     url(${props => props.image});
   background-size: cover;
   height: 95vh;
+
+  @media (max-width: 1032px) {
+    background-position: 100%;
+  }
+
 `
 
 export const ChampInfo = styled.div`
