@@ -62,6 +62,9 @@ const Items = () => {
           {currentItem && (
             <>
               <div>
+              <ItemImage
+                  src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[currentItem]?.image.full}`}
+                />
                 <p>{items[currentItem]?.name}</p>
                 <p>{items[currentItem]?.plaintext}</p>
               </div>
@@ -76,7 +79,25 @@ const Items = () => {
               </SelectedBuild>
 
               <ItemContainer>
+                {
+                  items[currentItem]?.into !== null ? <p>Into :</p> : null
+                }
                 {items[currentItem]?.into?.map((key, index) => (
+                  <div key={index}>
+                    <p>{items[key].name}</p>
+                    <ItemImage
+                      onClick={() => onClickSelectItem(items[key])}
+                      src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
+                    />
+                  </div>
+                ))}
+              </ItemContainer>
+
+              <ItemContainer>
+                {
+                  items[currentItem]?.from !== null ? <p>From :</p> : null
+                }
+                {items[currentItem]?.from?.map((key, index) => (
                   <div key={index}>
                     <p>{items[key].name}</p>
                     <ItemImage

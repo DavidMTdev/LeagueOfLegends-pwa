@@ -3,9 +3,12 @@ import styled from 'styled-components'
 export const ItemSContainer = styled.div`
   display: flex;
   width: 100%;
+  backdround-color: red;
 `
 
 export const ItemSelectedContainer = styled.div`
+  position: fixed;
+  left: 50vw;
   display: block;
   width: 70%;
 `
@@ -13,7 +16,7 @@ export const ItemSelectedContainer = styled.div`
 export const ItemContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: ${props => props.width || '100%'};
+  width: 50vw;
   align-content: center;
   justify-content: center;
 `
