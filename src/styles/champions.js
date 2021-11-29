@@ -1,21 +1,43 @@
 import styled from 'styled-components'
+import devices from '../config/devices'
 
 export const DivContainerChamp = styled.div`
   display: flex;
-  margin: 5% 0;
+  padding: 5% 0;
   width: 100%;
+
+  @media ${devices.mobile} {
+    padding: 10% 0;
+    flex-direction: column;
+  }
 `
 
 export const ContainerChampion = styled.div``
 
 export const DivChampion = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 20vw);
+  grid-template-columns: repeat(8, 1fr);
+
+  @media ${devices.laptop} {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media ${devices.tablet} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media ${devices.mobile} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `
 
 export const ContainerOption = styled.div`
-  width: 100%;
+  width: auto;
   margin: 0 5%;
+
+  @media ${devices.mobile} {
+    margin-bottom: 5%;
+  }
 `
 
 export const ItemChampion = styled.div`
@@ -27,6 +49,11 @@ export const ItemChampion = styled.div`
 export const ImageSquareChampion = styled.img`
   width: 100px;
   height: 100px;
+
+  @media ${devices.mobile} {
+    width: 50px;
+    height: 50px;
+  }
 `
 
 export const ChampionDetail = styled.p`

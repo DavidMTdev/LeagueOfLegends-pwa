@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import devices from '../config/devices'
 
 export const ContainerNav = styled.div`
   display: flex;
@@ -72,6 +73,10 @@ export const HeaderNav = styled.nav`
   align-items: center;
   height: 100%;
   margin: 0 20px;
+
+  @media ${devices.mobile} {
+    display: none;
+  }
 `
 
 export const LogoTitle = styled.div`
@@ -79,6 +84,14 @@ export const LogoTitle = styled.div`
   font-family: 'FrizQuadrata';
   font-weight: bold;
   margin-left: 10px;
+
+  @media ${devices.tablet} {
+    display: none;
+  }
+
+  @media ${devices.mobile} {
+    display: none;
+  }
 `
 
 export const LogoIcon = styled.img`
