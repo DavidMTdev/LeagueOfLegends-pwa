@@ -13,7 +13,7 @@ const Login = () => {
   const token = useSelector(state => state.login.data)
 
   if (token) {
-    history.push('/builds')
+    history.push('/champions')
   }
 
   return (

@@ -91,6 +91,7 @@ const Champion = () => {
                     </Competence>
                   ))
                 }
+
               </SelectView>
               {
                   competence == 4 ? 

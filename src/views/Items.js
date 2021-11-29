@@ -86,7 +86,7 @@ const Items = () => {
                   <div key={index}>
                     <p>{items[key].name}</p>
                     <ItemImage
-                      onClick={() => onClickSelectItem(items[key])}
+                      onClick={() => onClickSelectItem(key)}
                       src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
                     />
                   </div>
@@ -101,7 +101,7 @@ const Items = () => {
                   <div key={index}>
                     <p>{items[key].name}</p>
                     <ItemImage
-                      onClick={() => onClickSelectItem(items[key])}
+                      onClick={() => onClickSelectItem(key)}
                       src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
                     />
                   </div>
