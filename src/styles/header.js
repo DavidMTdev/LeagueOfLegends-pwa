@@ -6,7 +6,30 @@ export const ContainerNav = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  /* margin: 0 10px; */
+`
+
+export const ContainerNavMenu = styled.div`
+  display: none;
+
+  @media ${devices.mobile} {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+`
+
+export const ContainerNavLink = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  @media ${devices.mobile} {
+    /* display: none; */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 `
 
 export const ThemeIcon = styled.svg`
@@ -14,6 +37,11 @@ export const ThemeIcon = styled.svg`
   height: 32px;
   fill: ${props => props.theme.secondary};
   margin-left: 20px;
+
+  @media ${devices.mobile} {
+    margin-left: 0;
+    margin-right: 10px;
+  }
 `
 
 export const NavTranslation = styled.div`
@@ -27,6 +55,10 @@ export const NavTranslation = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${devices.mobile} {
+    padding: 0;
+  }
 `
 
 export const StyledLink = styled(Link)`
@@ -73,10 +105,11 @@ export const HeaderNav = styled.nav`
   align-items: center;
   height: 100%;
   margin: 0 20px;
+  position: relative;
 
-  @media ${devices.mobile} {
+  /* @media ${devices.mobile} {
     display: none;
-  }
+  } */
 `
 
 export const LogoTitle = styled.div`
@@ -97,4 +130,28 @@ export const LogoTitle = styled.div`
 export const LogoIcon = styled.img`
   width: 32px;
   height: 32px;
+`
+
+export const HeaderMenu = styled.div`
+  display: none;
+  height: 100%;
+
+  @media ${devices.mobile} {
+    display: flex;
+  }
+`
+
+export const MenuBurger = styled.div`
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 20px;
+`
+
+export const ItemMenu = styled.span`
+  height: 3px;
+  width: 100%;
+  background-color: ${props => props.theme.secondary};
 `

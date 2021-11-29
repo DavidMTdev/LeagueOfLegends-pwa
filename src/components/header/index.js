@@ -1,6 +1,9 @@
+import { useState } from 'react'
+
 import NavLink from './NavLink'
 import NavTheme from './NavTheme'
 import NavTranslate from './NavTranslate'
+import NavMenu from './NavMenu'
 
 import IconLogo from '../../assets/icons/league-of-lengeds-icon-default.png'
 import {
@@ -9,10 +12,18 @@ import {
   HollowHeader,
   HeaderNav,
   LogoIcon,
-  LogoTitle
+  LogoTitle,
+  HeaderMenu
 } from '../../styles/header'
 
 const Header = () => {
+  const [showLink, setShowLink] = useState(false)
+
+  const onClickMenu = () => {
+    setShowLink(!showLink)
+    console.log('etyette')
+  }
+
   return (
     <>
       <HollowHeader />
@@ -27,7 +38,14 @@ const Header = () => {
           <NavLink />
           <NavTheme />
           <NavTranslate />
+          <NavMenu />
         </HeaderNav>
+
+        {/* <HeaderMenu>
+          <NavTheme />
+          <NavTranslate />
+          <NavMenu />
+        </HeaderMenu> */}
       </ContainerHeader>
     </>
   )

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { ContainerNav, StyledLink } from '../../styles/header'
+import { ContainerNavLink, StyledLink } from '../../styles/header'
 import Logout from '../login/Logout'
 
 const NavLink = () => {
@@ -8,7 +8,7 @@ const NavLink = () => {
   const auth = useSelector(state => state.login.data)
 
   return (
-    <ContainerNav>
+    <ContainerNavLink>
       <StyledLink to='/champions'>{t('header.champions')}</StyledLink>
       <StyledLink to='/items'>{t('header.items')}</StyledLink>
 
@@ -16,7 +16,7 @@ const NavLink = () => {
 
       {auth && <StyledLink to='/builds'>{t('header.builds')}</StyledLink>}
       {auth && <Logout />}
-    </ContainerNav>
+    </ContainerNavLink>
   )
 }
 
