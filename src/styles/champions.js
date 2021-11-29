@@ -12,23 +12,15 @@ export const DivContainerChamp = styled.div`
   }
 `
 
-export const ContainerChampion = styled.div``
+export const ContainerChampion = styled.div`
+  @media ${devices.mobile} {
+    margin: auto 10%;
+  }
+`
 
 export const DivChampion = styled.div`
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-
-  @media ${devices.laptop} {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  @media ${devices.tablet} {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media ${devices.mobile} {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  display: flex;
+  flex-wrap: wrap;
 `
 
 export const ContainerOption = styled.div`
@@ -44,6 +36,11 @@ export const ItemChampion = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
+
+  @media ${devices.mobile} {
+    width: 50%;
+  }
 `
 
 export const ImageSquareChampion = styled.img`
