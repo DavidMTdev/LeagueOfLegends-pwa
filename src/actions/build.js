@@ -4,7 +4,6 @@ import {
   NEW_BUILD,
   SELECTED_BUILD
 } from '../config/type'
-import build from '../reducers/build'
 
 export const newBuild = name => ({
   type: NEW_BUILD,

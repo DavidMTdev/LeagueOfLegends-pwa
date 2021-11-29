@@ -1,16 +1,32 @@
 import styled from 'styled-components'
 
 export const DivContainerChamp = styled.div`
-  display: grid;
-  grid-template-columns: 20vw 80vw;
-  margin-top: 10vh;
-  width: 100vw;
-  height: 90vh;
+  display: flex;
+  margin: 5% 0;
+  width: 100%;
 `
+
+export const ContainerChampion = styled.div``
 
 export const DivChampion = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 20vw);
+`
+
+export const ContainerOption = styled.div`
+  width: 100%;
+  margin: 0 5%;
+`
+
+export const ItemChampion = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const ImageSquareChampion = styled.img`
+  width: 100px;
+  height: 100px;
 `
 
 export const ChampionDetail = styled.p`
@@ -34,7 +50,6 @@ export const BackgroundChamp = styled.div`
   @media (max-width: 1032px) {
     background-position: 100%;
   }
-
 `
 
 export const ChampInfo = styled.div`

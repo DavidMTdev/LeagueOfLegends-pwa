@@ -1,41 +1,53 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import actions from '../actions'
-import { DivChampion, DivContainerChamp } from '../styles/champions'
+
+import Loading from '../components/loading/Loading'
+import Dropdown from '../components/Dropdown'
+import ChampionList from '../components/champion/ChampionList'
+
+import {
+  ContainerChampion,
+  DivContainerChamp,
+  ContainerOption
+} from '../styles/champions'
 
 const Champions = () => {
   const dispatch = useDispatch()
-  const history = useHistory()
   const { i18n } = useTranslation()
-
   const loading = useSelector(state => state.champions.loading)
   const error = useSelector(state => state.champions.error)
   const champions = useSelector(state => state.champions.champions)
+
+  const version = [
+    { name: '11.22.1' },
+    { name: '11.21.1' },
+    { name: '11.20.1' },
+    { name: '11.19.1' },
+    { name: '11.18.1' },
+    { name: '10.11.1' }
+  ]
 
   useEffect(() => {
     dispatch(actions.champions.fetchChampions('11.22.1', i18n.language))
   }, [i18n.language])
 
-  const onClickChampion = name => {
-    history.push(`/champions/${name}`)
-  }
-
-  const showChampions = champions.map((item, index) => (
-    <div key={index} onClick={() => onClickChampion(item.id)}>
-      <img src={item.images.square} />
-      <div>{item.name}</div>
-    </div>
-  ))
-
   return (
     <DivContainerChamp>
-      <div></div>
-      {loading && <div>loading</div>}
-      {error && <div>error</div>}
-      {champions && <DivChampion> {showChampions} </DivChampion>}
+      <ContainerOption>
+        <Dropdown
+          list={version}
+          headerOption='Select version'
+          obj='champions'
+        />
+      </ContainerOption>
+      <ContainerChampion>
+        {error && <div>error</div>}
+        {loading && <Loading size='1' />}
+        {champions && <ChampionList champions={champions} />}
+      </ContainerChampion>
     </DivContainerChamp>
   )
 }

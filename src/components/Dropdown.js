@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 import actions from '../actions'
 
@@ -13,6 +14,8 @@ import {
 
 const Dropdown = props => {
   const dispatch = useDispatch()
+  const { i18n } = useTranslation()
+
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
 
@@ -21,7 +24,13 @@ const Dropdown = props => {
   const onOptionClicked = (value, index) => {
     setSelectedOption(value)
     setIsOpen(false)
-    dispatch(actions.build.selectedBuild(index))
+    if (props.obj == 'build') {
+      dispatch(actions.build.selectedBuild(index))
+    }
+
+    if (props.obj == 'champions') {
+      dispatch(actions.champions.fetchChampions(value?.name, i18n.language))
+    }
   }
 
   return (
