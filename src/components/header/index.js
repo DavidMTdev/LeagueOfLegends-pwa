@@ -13,16 +13,12 @@ import {
   HeaderNav,
   LogoIcon,
   LogoTitle,
-  HeaderMenu
+  HeaderMenu,
+  BurgerDiv
 } from '../../styles/header'
 
 const Header = () => {
   const [showLink, setShowLink] = useState(false)
-
-  const onClickMenu = () => {
-    setShowLink(!showLink)
-    console.log('etyette')
-  }
 
   return (
     <>
@@ -35,10 +31,12 @@ const Header = () => {
         </HeaderLogo>
 
         <HeaderNav>
-          <NavLink />
+          { showLink ? <NavLink /> : null }
           <NavTheme />
           <NavTranslate />
-          <NavMenu />
+          <BurgerDiv onClick={() => setShowLink(!showLink)}>
+            <NavMenu />
+          </BurgerDiv>
         </HeaderNav>
 
         {/* <HeaderMenu>

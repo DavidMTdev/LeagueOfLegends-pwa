@@ -112,6 +112,11 @@ export const HeaderNav = styled.nav`
   } */
 `
 
+export const BurgerDiv = styled.div`
+  height: 100%;
+  width: 100%;
+`
+
 export const LogoTitle = styled.div`
   color: ${props => props.theme.secondary};
   font-family: 'FrizQuadrata';
