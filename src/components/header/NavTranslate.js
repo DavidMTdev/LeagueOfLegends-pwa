@@ -7,7 +7,6 @@ const NavTranslate = () => {
   const { i18n } = useTranslation()
   const [current, setCurrent] = useState(i18n.language)
 
-  console.log(current)
   useEffect(() => {}, [])
 
   const switchTranslate = language => {
