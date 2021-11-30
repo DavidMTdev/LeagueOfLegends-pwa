@@ -22,6 +22,6 @@ Objectif
     - [x]	Affichage de tous les Items
     - [x]	Création de Build personnalisé d’Item (Uniquement quand l'User est connecté)
     - [x]	Affichage des détails d’un champion
-    - [ ]	Sélection des versions du Jeu et des informations
+    - [x]	Sélection des versions du Jeu et des informations
     - [x]	Choix de la langue
     - [x]	Pouvoir changer de thème
