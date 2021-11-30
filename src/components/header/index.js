@@ -18,7 +18,7 @@ import {
 } from '../../styles/header'
 
 const Header = () => {
-  const [showLink, setShowLink] = useState(false)
+  const [showLink, setShowLink] = useState(true)
 
   return (
     <>
