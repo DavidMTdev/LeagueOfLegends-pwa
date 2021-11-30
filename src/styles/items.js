@@ -7,17 +7,17 @@ export const ItemSContainer = styled.div`
 `
 
 export const ItemSelectedContainer = styled.div`
-  position: fixed;
+  position: absolute;
+  z-index: -1;
   left: 50vw;
   display: block;
-  width: 70%;
 `
 
 export const ItemContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  width: ${props => props.width || '50vw'};
+  width: ${props => props.width || '40vw'};
   align-content: center;
   justify-content: center;
 `
@@ -25,6 +25,16 @@ export const ItemContainer = styled.div`
 export const ItemImage = styled.img`
   width: 50px;
   height: 50px;
+  margin: 3px;
+`
+export const IntoDiv = styled.div`
+  margin: 3px;
+`
+
+export const AffichageItem = styled.div`
+  width: 100%;
+  height: 100%;
+  display: table-cell;
 `
 
 export const SelectedBuild = styled.div`

@@ -14,7 +14,9 @@ import {
   ItemContainer,
   ItemImage,
   Button,
-  SelectedBuild
+  SelectedBuild,
+  AffichageItem,
+  IntoDiv
 } from '../styles/items'
 
 const Items = () => {
@@ -61,13 +63,15 @@ const Items = () => {
         <ItemSelectedContainer>
           {currentItem && (
             <>
-              <div>
-                <ItemImage
-                  src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[currentItem]?.image.full}`}
-                />
-                <p>{items[currentItem]?.name}</p>
+              <AffichageItem>
+                <AffichageItem>
+                  <ItemImage
+                    src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[currentItem]?.image.full}`}
+                  />
+                  <p>{items[currentItem]?.name}</p>
+                </AffichageItem>
                 <p>{items[currentItem]?.plaintext}</p>
-              </div>
+              </AffichageItem>
 
               <SelectedBuild>
                 <Dropdown
@@ -85,26 +89,26 @@ const Items = () => {
               <ItemContainer>
                 {items[currentItem]?.into != null ? <p>Into :</p> : null}
                 {items[currentItem]?.into?.map((key, index) => (
-                  <div key={index}>
+                  <IntoDiv key={index}>
                     <p>{items[key].name}</p>
                     <ItemImage
                       onClick={() => onClickSelectItem(key)}
                       src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
                     />
-                  </div>
+                  </IntoDiv>
                 ))}
               </ItemContainer>
 
               <ItemContainer>
                 {items[currentItem]?.from != null ? <p>From :</p> : null}
                 {items[currentItem]?.from?.map((key, index) => (
-                  <div key={index}>
+                  <IntoDiv key={index}>
                     <p>{items[key].name}</p>
                     <ItemImage
                       onClick={() => onClickSelectItem(key)}
                       src={`http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${items[key].image.full}`}
                     />
-                  </div>
+                  </IntoDiv>
                 ))}
               </ItemContainer>
             </>

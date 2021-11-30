@@ -25,3 +25,9 @@ Objectif
     - [x]	Sélection des versions du Jeu et des informations
     - [x]	Choix de la langue
     - [x]	Pouvoir changer de thème
+
+
+
+# Tester le
+
+Lien : https://leagueoflegends-pwa.netlify.app/
