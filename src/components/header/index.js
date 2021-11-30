@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import NavLink from './NavLink'
 import NavTheme from './NavTheme'
@@ -20,6 +20,32 @@ import {
 const Header = () => {
   const [showLink, setShowLink] = useState(true)
 
+  const [windowSize, setWindowSize] = useState(undefined);
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize(window.innerWidth);
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log('test');
+    if (windowSize <= 375) {
+      setShowLink(false)
+    }
+    else{
+      setShowLink(true)
+    }
+  }, [windowSize])
+
+
   return (
     <>
       <HollowHeader />
@@ -31,7 +57,7 @@ const Header = () => {
         </HeaderLogo>
 
         <HeaderNav>
-          { showLink ? <NavLink /> : null }
+          { showLink && <NavLink /> }
           <NavTheme />
           <NavTranslate />
           <BurgerDiv onClick={() => setShowLink(!showLink)}>
